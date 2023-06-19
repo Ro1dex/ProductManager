@@ -1,7 +1,7 @@
 public class Product {
     protected int id;
     protected String name;
-    protected int price;
+    private int price;
 
     public Product(int id, String name, int price) {
         this.id = id;
@@ -17,9 +17,12 @@ public class Product {
         return name;
     }
 
+
+/*
     public int getPrice() {
         return price;
     }
+*/
 
 
 }
