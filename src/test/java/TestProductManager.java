@@ -49,4 +49,14 @@ public class TestProductManager {
         Product[] exp2 = {product4};
         Assertions.assertArrayEquals(act2,exp2);
     }
+    @Test
+    public void shouldNotFindIdWhenDelProduct(){
+        ProductRepository repository = new ProductRepository();
+        ProductManager manager = new ProductManager(repository);
+        manager.add(product1);
+        manager.add(product2);
+        manager.add(product3);
+        manager.add(product4);
+        Assertions.assertThrows(NotFoundException.class,() -> {repository.removeById(10);} );
+    }
 }
